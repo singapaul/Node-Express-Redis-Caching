@@ -5,16 +5,21 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 
+// setting up mogoose models
 require('./models/User');
 require('./models/Blog');
+// set up passport for auth 
 require('./services/passport');
 
+
+// set up mongoose 
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
+// create express sapplication 
 const app = express();
 
 app.use(bodyParser.json());
