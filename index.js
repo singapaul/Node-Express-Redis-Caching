@@ -10,7 +10,7 @@ require('./models/User');
 require('./models/Blog');
 // set up passport for auth 
 require('./services/passport');
-
+require('./services/cache')
 
 // set up mongoose 
 mongoose.Promise = global.Promise;
